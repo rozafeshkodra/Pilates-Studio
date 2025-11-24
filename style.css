@@ -1,3 +1,6 @@
+
+
+
 * {
   padding: 0;
   margin: 0;
@@ -45,4 +48,139 @@ li a{
     object-fit: cover;
     display: block;
 }
+
+
+
+
+
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* distanca mes dy fotove */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;        
+    left: 50%;        
+    transform: translate(-50%, -50%); 
+    width: 400px;     
+    height: 400px;     
+    background-color:rgba(228, 226, 207, 0.507); /* ngjyrë e bardhë gjysmë transparent */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.overlay h2 {
+   
+    margin-bottom: 90px;
+    font-size: 45px;
+}
+
+.overlay p {
+    
+    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.overlay button {
+    padding: 15px 50px;
+    border: none;
+    background-color: #044602;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background-color: #f0e5e5bd;
+    color: black;
+}
+
+
+
+.book-session {
+    text-align: center;
+    padding: 80px 20px;   /* hapësirë lart e poshtë */
+    background-color: #f9f9f9; /* ngjyrë sfondi e lehtë */
+    font-size: 40px;
+}
+
+
+.book-session {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.book-session h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+/* KONTEJNERI ME 3 KATRORA */
+.katrorat {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* KATRORI */
+.katror {
+    width: 350px;
+    height: 700;
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+/* FOTO NË KATROR */
+.katror img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* TITULLI */
+.katror h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* TEKSTI */
+.katror p {
+    font-size: 16px;
+    margin: 6px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
