@@ -234,7 +234,7 @@ li a{
     line-height: 1.6;
 }
 
-/* another one*/
+/* get in touch with us*/
 
 .contact-section {
     display: flex;
@@ -757,3 +757,66 @@ li a{
 .register-link p a:hover{
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+/*REGISTER FORM - SHTES */
+
+
+.input-boxi select {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    padding: 0 20px;
+    font-size: 15px;
+    color: #fff;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.input-boxi select option {
+    color: #000; 
+}
+
+.input-boxi textarea {
+    width: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    color: #fff;
+    resize: vertical;
+    outline: none;
+    height: 90px;
+    margin-top: 10px;
+}
+
+/* Checkbox + labels */
+.terms-label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+.terms-label input {
+    accent-color: #fff;
+}
+
+
+.input-boxi.big {
+    height: auto;
+    margin-bottom: 12px;
+}
+
+

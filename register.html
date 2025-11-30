@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="login-forma">
+
+   <header>
+    <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates">
+    <nav>
+        <ul class="nav_links">
+            <li><a href="Pilates.html">Home</a></li>
+            <li><a href="login.html">Book Online</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Services</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="login-box">
+        <div class="wrapper">
+            <form action="">
+                <h1>Register</h1>
+
+                <div class="input-boxi">
+                    <input type="text" placeholder="Full Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-boxi">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-boxi">
+                    <input type="tel" placeholder="Phone Number" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+
+                <div class="input-boxi">
+                    <input type="date" required>
+                    <i class='bx bxs-calendar'></i>
+                </div>
+
+                <div class="input-boxi">
+                    <select required>
+                        <option value="" disabled selected>Select Class Type</option>
+                        <option>Pilates Mat</option>
+                        <option>Pilates Reformer</option>
+                        <option>Private Session</option>
+                        <option>Group Session</option>
+                    </select>
+                </div>
+
+                <div class="input-boxi">
+                    <select required>
+                        <option value="" disabled selected>Experience Level</option>
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </div>
+
+                <div class="input-boxi">
+                    <select required>
+                        <option value="" disabled selected>Preferred Schedule</option>
+                        <option>Morning</option>
+                        <option>Afternoon</option>
+                        <option>Evening</option>
+                    </select>
+                </div>
+
+                <div class="input-boxi big">
+                    <textarea placeholder="Notes" ></textarea>
+                </div>
+
+                <label style="display:flex; gap:8px; align-items:center; margin:10px 0;">  <!-- ketu pjesa e checkbox dhe teksti jan ne nje resht kom vendos inline css maspejt me kry pun -->
+                    <input type="checkbox" required>
+                    I accept the Terms & Conditions
+                </label>
+
+                <button type="submit" class="btn">Register</button>
+
+                <div class="register-link">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -12,7 +12,7 @@
        <nav>
         <ul class="nav_links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Book Online</a></li>
+            <li><a href="login.html">Book Online</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">Services</a></li>
@@ -27,7 +27,7 @@
 <div class="overlay">
     <h2>Discover the <br> Power of Pilates</h2>
     <p>Welcome to our Pilates studio, where strength and flexibility come together. Join us for personalized sessions in a supportive environment.</p>
-    <button>Join Now</button>
+    <button a href='register.html'>Join Now</button> <!--  -->
 </div>
 <!-- butoni :> -->
 <section class="book-session">
@@ -43,7 +43,7 @@
             <p>Start your journey to strength and flexibility—perfect for beginners!</p> <br>
             <p>Thu <br> 30 min</p>
             <p>$50</p>
-            <button class="book-btn">Book Now</button>
+            <button class="book-btn" onclick="window.location.href='register.html'" >Book Now</button>
         </div>
 
         <div class="katror">
@@ -85,8 +85,8 @@
     </div>
 </section>
 
-<!-- another one :> -->
 
+<!-- get in touch with us:> -->
 <div class="contact-section">
     <div class="contact-image">
         <img src="images/pic5.avif" alt="Yoga Pose">
@@ -94,32 +94,15 @@
     <div class="contact-form">
         <h2>Get in Touch With Us</h2>
         <form>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstName">First name *</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last name *</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-            </div>
             <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message"></textarea>
+                <label for="clientMessage">Tell us anything: a comment, suggestion, or just spred some positivity! *</label>
+                <textarea id="clientMessage" name="clientMessage" placeholder="Write your message here..." required></textarea>
             </div>
             <button type="submit">Send</button>
         </form>
     </div>
 </div>
+
 <!-- Pjesa e Services-->
 <section class="Services">
     <div class="services-majtas">
