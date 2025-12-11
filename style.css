@@ -879,3 +879,180 @@ input[type="date"]{
     border-radius: 6px;
     border: 1px solid #ddd;
 }
+
+
+/*booking online eda*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #f5f5f5;
+}
+
+.nav-header {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.imazhi1 {
+    height: 50px;
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav_links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav_links a:hover {
+    color: #8b7355;
+}
+
+.book-header {
+    background: #8b7355;
+    color: white;
+    padding: 60px 40px;
+}
+
+.book-header h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.book-header p {
+    font-size: 1.2rem;
+}
+
+main {
+    background: #f5f0e8;
+    border-radius: 40px 40px 0 0;
+    margin-top: -50px;
+    padding: 40px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.filter label {
+    margin-right: 10px;
+}
+
+.filter select {
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.month {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.month button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.month h2 {
+    font-size: 1.5rem;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
+
+.day-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.class {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.class button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.class button:hover {
+    background: #555;
+}
+
+@media (max-width: 768px) {
+    .nav-header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav_links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .book-header h1 {
+        font-size: 2rem;
+    }
+    
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        grid-template-columns: 1fr;
+    }
+}
