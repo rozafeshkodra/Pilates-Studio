@@ -11,7 +11,7 @@ body{
 header{
     display: flex;
     padding: 10px 40px;
-    background-color: #D7C4B6;
+    background-color: #FEF5E7;
     justify-content: space-between;
     align-items: center;
     box-shadow: inset;
@@ -36,8 +36,8 @@ li a{
 .nav_links li a {
     transition: all 0.3s ease 0s;
 }
-.nav_links li :hover{
-    color: #f9adc9;
+.nav_links li a:hover{
+    color: #a28164c9;
 }
 
 /*PJESA E FOOTERIT*/
@@ -98,7 +98,7 @@ li a{
     font-size: 15px;
 }
 .submit {
-    background: #044602;
+    background: #826246;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -106,7 +106,7 @@ li a{
     cursor: pointer;
 }
 .submit:hover {
-    background: #607660;
+    background: #b59375;
 }
 .footer{
     display: flex;
@@ -398,7 +398,7 @@ textarea:focus {
 .submit-contact {
     width: 100%;
     height: 48px;
-    background: #1f3d23;
+    background: #826246;
     color: white;
     border: none;
     cursor: pointer;
@@ -409,6 +409,7 @@ textarea:focus {
 }
 .submit-contact:hover {
     opacity: 0.9;
+    background: #b59375;
 }
 
 
@@ -436,7 +437,7 @@ textarea:focus {
 }
 
 .book-header {
-    background: #8b7355;
+    background: #8c7a65;
     color: white;
     padding: 60px 40px;
 }
@@ -525,7 +526,7 @@ main {
 }
 
 .class button {
-    background: #333;
+    background: #8c7a65;
     color: white;
     border: none;
     padding: 10px;
@@ -540,3 +541,216 @@ main {
     background: #555;
 }
 
+
+
+
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  /* Header */
+  header {
+    padding: 10px 20px;
+  }
+
+  .nav_links {
+    gap: 10px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 40px;
+    gap: 20px;
+  }
+
+  /* About */
+  .studio-section {
+    padding: 30px 5%;
+    gap: 25px;
+  }
+
+  .studio-text h2,
+  .title {
+    font-size: 36px;
+  }
+
+  .studio-text p,
+  .subtitle {
+    font-size: 16px;
+  }
+
+  /* Services */
+  .Services {
+    flex-direction: column;
+  }
+
+  .services-majtas,
+  .services-djathtas {
+    width: 100%;
+    padding: 30px 40px;
+  }
+
+  .services-djathtas {
+    padding-left: 40px;
+  }
+
+  /* Contact */
+  .container-contact {
+    flex-direction: column;
+  }
+
+  .left-contact,
+  .right-contact {
+    width: 100%;
+    padding: 40px 30px;
+  }
+
+  .right-contact {
+    align-items: center;
+  }
+
+  .form-contact {
+    max-width: 600px;
+  }
+
+  /* Book Online */
+  .book-header {
+    padding: 40px 30px;
+  }
+
+  .book-header h1 {
+    font-size: 3rem;
+  }
+
+  main {
+    padding: 30px 20px;
+  }
+}
+
+/* Phone (≤ 600px) */
+@media (max-width: 600px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .nav_links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .nav_links li {
+    margin-right: 10px;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .footer-majtas,
+  .footer-djathtas {
+    width: 100%;
+  }
+
+  /* About */
+  .studio-section {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .studio-text,
+  .studio-image {
+    width: 100%;
+  }
+
+  .studio-text h2,
+  .title {
+    font-size: 30px;
+  }
+
+  .studio-text p,
+  .subtitle {
+    font-size: 15px;
+  }
+
+  /* Instructors */
+  .instructors {
+    padding: 40px 15px;
+  }
+
+  .instructor img {
+    height: 260px;
+  }
+
+  /* Services */
+  .Services {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .services-majtas,
+  .services-djathtas {
+    width: 100%;
+    padding: 25px 15px;
+  }
+
+  .services-majtas h1 {
+    font-size: 32px;
+  }
+
+  .services-majtas p,
+  .service-item p,
+  .pjesa {
+    font-size: 16px;
+  }
+
+  .pjesa {
+    max-width: 100%;
+  }
+
+  /* Contact */
+  .container-contact {
+    flex-direction: column;
+  }
+
+  .left-contact,
+  .right-contact {
+    width: 100%;
+    padding: 25px 15px;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  /* Book Online */
+  .book-header {
+    padding: 30px 15px;
+  }
+
+  .book-header h1 {
+    font-size: 2.4rem;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  .calendar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .class {
+    min-height: auto;
+  }
+}
