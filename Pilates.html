@@ -8,10 +8,15 @@
 </head>
 <body>
    <header>
-       <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates">
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+       <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates" onclick="window.location.href='Pilates.html'">
        <nav>
         <ul class="nav_links">
-            <li><a href="#">Home</a></li>
+            <li><a href="Pilates.html">Home</a></li>
              <li><a href="about.html">About</a></li>
              <li><a href="services.html">Services</a></li>
              <li><a href="contact.html">Contact</a></li>
@@ -19,22 +24,21 @@
         </ul>
        </nav>
    </header>
+   <!--Pjesa e fotove ne fillim-->
    <section class="hero">
        <img class="foto" src="premium_photo-1674675647732-ba72cd15ff93.avif" alt="foto1">
        <img class="foto" src="photo-1717500252573-d31d4bf5ddf1.avif" alt="foto2">
    </section>
-<!-- katrori me permbajtje :> -->
 <div class="overlay">
     <h2>Discover the <br> Power of Pilates</h2>
     <p>Welcome to our Pilates studio, where strength and flexibility come together. Join us for personalized sessions in a supportive environment.</p>
      <button onclick="window.location.href='login.html'">Join Now</button>                                                                            <!-- <button src="login.html">Join Now</button> -->
 </div>
-<!-- butoni :> -->
+<!--Pjesa e book your session-->
 <section class="book-session">
     <h2>Book Your Session</h2>
     
 </section>
-<!-- katrort  :> -->
     <div class="katrorat">
 
         <div class="katror">
@@ -65,7 +69,7 @@
         </div>
 
     </div>
-  <!-- katrort tjer :> -->
+ <!--Pjesa e about our studio-->
 <section class="about-section">
     <div class="about-container">
         <!-- FOTO E MADHE -->
@@ -133,10 +137,10 @@
         <h2>Get in Touch With Us</h2>
         <form>
             <div class="form-group">
-                <label for="clientMessage">Tell us anything: a comment, suggestion, or just spred some positivity! *</label>
+                <label for="clientMessage">Tell us anything: a comment, suggestion, or just spred some positivity!</label>
                 <textarea id="clientMessage" name="clientMessage" placeholder="Write your message here..." required></textarea>
             </div>
-            <button type="submit">Send</button>
+            <button class="btn-contact-form" type="submit">Send</button>
         </form>
     </div>
 </div>
@@ -149,7 +153,10 @@
 
         <p class="contact">123-456-7890</p>
         <p class="contact">studiopilates@gmail.com</p>
-        <p class="adress">Rr.Muharrem Fejza</p>
+        <p class="adress">
+            <a href="https://maps.app.goo.gl/v17v9tocxQwDsUoK6">Rr.Muharrem Fejza
+            </a>
+        </p>
 
         <div class="socials">
             <i class="fa-brands fa-facebook"></i>

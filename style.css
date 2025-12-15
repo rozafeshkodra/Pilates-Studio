@@ -1,6 +1,3 @@
-
-
-
 * {
   padding: 0;
   margin: 0;
@@ -8,14 +5,30 @@
 }
 body{
     background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
+/*PJESA E HEADERIT*/
 header{
+    flex-wrap: wrap;
     display: flex;
     padding: 10px 40px;
-    background-color: #D7C4B6;
+    background-color: #b59375;
     justify-content: space-between;
     align-items: center;
     box-shadow: inset;
+}
+.burger{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.burger span{
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    border-radius: 2px;
 }
 .imazhi1{
     cursor: pointer;
@@ -37,13 +50,21 @@ li a{
 .nav_links li a {
     transition: all 0.3s ease 0s;
 }
-.nav_links li :hover{
-    color: #f9adc9;
+.nav_links li a:hover{
+    color: whitesmoke;
 }
+header nav .nav_links li a:hover{
+    color: whitesmoke;
+}
+/*PJESA NE FILLIM*/
 .hero{
-    display: flex;
     width: 100%;
     height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 .foto{
     width: 50%;
@@ -51,17 +72,6 @@ li a{
     object-fit: cover;
     display: block;
 }
-
-/* katrori ne mes te fotov*/
-
-.hero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* distanca mes dy fotove */
-}
-
 .overlay {
     position: absolute;
     top: 50%;        
@@ -75,66 +85,51 @@ li a{
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
 .overlay h2 {
    
     margin-bottom: 90px;
     font-size: 45px;
 }
-
 .overlay p {
-    
     margin-bottom: 30px;
     font-size: 17px;
     line-height: 1.5;
 }
-
 .overlay button {
     padding: 15px 50px;
     border: none;
-    background-color: #044602;
+    background-color: #826246;
     color: white;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
 }
-
 .overlay button:hover {
-    background-color: #607660;
+    background-color: #b59375;
     
 }
 
 
+/*PJESA E BOOK YOUR SESSION*/
 
 .book-session {
     text-align: center;
-    padding: 80px 20px;   /* hapësirë lart e poshtë */
-    background-color: #f9f9f9; /* ngjyrë sfondi e lehtë */
+    padding: 80px 20px;  
+    background-color: #f9f9f9; 
     font-size: 40px;
 }
-
-
-.book-session {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-}
-
 .book-session h2 {
     font-size: 40px;
     margin-bottom: 18px;
 }
-
-/* KONTEJNERI ME 3 KATRORA */
 .katrorat {
     display: flex;
     justify-content: center;
     gap: 35px;
 }
-
-/* KATRORI */
 .katror {
     width: 450px;
+    max-width: 100%;
     height: 700px;
     background: #D9CECC;
     padding: 35px;
@@ -142,99 +137,82 @@ li a{
     border: 1px solid #ddd;
     gap: 8px;
 }
-
-/* FOTO NË KATROR */
 .katror img {
     width: 100%;
     height: 400px;
     object-fit: cover;
     border-radius: 8px;
 }
-
-/* TITULLI */
 .katror h3 {
     font-size: 25px;
     margin: 10px 0;
 }
-
-/* TEKSTI */
 .katror p {
     font-size: 15px;
     margin: 6px 0;
 }
-
-
-/* butoni*/
 .book-btn {
     align-self: start;
     margin-top: 10px;
     padding: 8px 16px;   
-    border-radius: none;
-    background: #044602;
+    border-radius: 0;
+    border-color: #826246;
+    background: #826246;
     color: white;
     font-size: 14px;     
     cursor: pointer;
     display: inline-block;  
     transition: background 0.2s ease;
 }
-
 .book-btn:hover {
-    background: #607660;
+    background: #b59375;
 }
 
 
-
-/*    katrori tjeter :>*/
+/*PJESA E ABOUT OUR PILATES STUDIO*/
 
 .about-section {
     margin-top: 80px;
     padding: 70px 20px;
     background: #D7C4B6; 
 }
-
 .about-container {
     display: flex;
     gap: 30px;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap; /* responsive */
+    flex-wrap: wrap; 
 }
 
-/* FOTO E MADHE */
 .about-image img {
     width: 100%;
     max-width: 800px;
     border-radius: 12px;
     object-fit: cover;
 }
-
-/* KATRORI ME TEKST */
 .about-text {
     background: #FBF3EE; 
-    color: #1e3a1f;
+    color: black;
     padding: 100px 80px;
     border-radius: 12px;
     flex: 1;
     min-width: 280px;
 }
-
 .about-text h2 {
     font-size: 28px;
     margin-bottom: 15px;
 }
-
 .about-text h3 {
     font-size: 20px;
     margin: 12px 0 6px;
 }
-
 .about-text p {
     font-size: 16px;
     line-height: 1.6;
 }
 
-/*pjesa (why us) */
+/*PJESA E WHY US */
 
 .why-us{
     padding-top: 50px;
@@ -243,7 +221,7 @@ li a{
     min-height: 100vh;
 }
 .us-left{
-    background: #8b7355;
+    background: #b59375;
     color: white;
     padding: 80px;
 }
@@ -268,21 +246,23 @@ li a{
 .us-box h3{
     font-size: 22px;
     margin-bottom: 10px;
-    color: #333;
+    color: black;
 }
 .us-box p{
     font-size: 18px;
     line-height: 1.6;
-    color: #444;
+    color:black;
     max-width: 500px;
 }
 .divider{
-    width: 90%;
-    height: 1px;
-    background: #C8C8C8;
+    width: 100%;       
+    height: 2px;       
+    background: black;
+    margin: 20px 0;   
+    flex-shrink: 0; 
 }
 
-/* get in touch with us*/
+/*PJESA E GET IN TOUCH WITH US*/
 
 .contact-section {
     display: flex;
@@ -290,47 +270,49 @@ li a{
     margin-top: 50px;
     min-height: 400px; 
 }
-
 .contact-image,
 .contact-form {
     flex: 1 ;
 }
-
 .contact-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block; 
 }
-
 .contact-form {
-    background-color: #d9e0d3;
+    background-color: #D9CECC;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center; 
+    padding: 0 40px;
 }
-.contact-form h2, label, textarea, button{
-    margin-left: 40px;
+.contact-form h2, 
+.contact-form label,
+.contact-form textarea,
+.contact-form button{
+    margin-left: 0;
 }
 .contact-form h2 {
     margin-bottom: 30px;
     font-family: 'Georgia', serif;
-    color: #2c3e2c;
+    color: black;
 }
-
+.contact-form label,
+.contact-form textarea {
+    color: black; 
+}
 .form-row {
     display: flex;
     gap: 20px;
 }
-
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
     flex: 1;
 }
-
 .form-group input,
 .form-group textarea {
     padding: 10px;
@@ -339,92 +321,24 @@ li a{
     background: transparent;
     font-size: 16px;
 }
-
-textarea {
+#clientMessage  {
     resize: vertical;
     min-height: 100px;
 }
-
-button {
+.btn-contact-form {
     padding: 12px 25px;
-    background-color: #044602;
+    background-color: #826246;
     color: #fff;
     border: none;
     cursor: pointer;
     font-size: 16px;
 }
-
-button:hover {
-    background-color: #607660;
+.btn-contact-form:hover {
+    background-color: #b59375;
 }
 
 
-/*Pjesa e services*/
-.Services{
-    margin-top: 50px;
-    display: flex;
-    width: 100%;
-    min-height: 85vh;
-}
-.services-majtas{
-    display: flex;
-    background-color: #D9CECC;
-    width: 50%;
-    color: black;
-    padding: 50px 30px;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 5%;
-}
-.services-majtas h1 {
-    font-size: 48px;
-}
-.services-majtas p{
-    font-size: 20px;
-    max-width: 400px;
-}
-.services-djathtas{
-    width: 54%;
-    padding: 20px 60px 0 250px;
-    
-}
-.pjesa{
-    max-width: 500px;
-    font-size: 30px;
-    
-}
-.services-list{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.service-item{
-    display: inline-block
-}
-.service-item h3{
-    margin-right: 10px;
-    padding-top: 20px;
-    font-size: 25px;
-    cursor: pointer;
-}
-.service-item p{
-   display: inline;
-   margin: 0;
-   font-size: 20px;
-}
-.service-item .desc{
-    display: block;
-    margin-top: 5px;
-    
-    line-height: 1.4;
-}
-.service-item h3 {
-    transition: color 0.3s ease; 
-}
-.service-item:hover h3 {
-    color: #dc9bc2; 
-}
-/*Pjesa e footer-it*/
+/*PJESA E FOOTER-IT*/
 
 .footer{
     display: flex;
@@ -432,6 +346,8 @@ button:hover {
     padding: 50px 150px;
     gap: 40px;
     color: black;
+     background: #f2f2f2;
+    border-top: 2px solid #dcdcdc;
 }
 .footer-majtas, .footer-djathtas{
     width: 45%;
@@ -459,31 +375,37 @@ button:hover {
 .footer-djathtas label{
     font-size: 16px;
 }
+.footer-djathtas label,
+.checkbox label {
+    color: black; 
+}
 .emaili{
     width: 100%;
     padding: 10px 0;
     border: none;
-    border-bottom: 2px solid #0e341a;
+    border-bottom: 2px solid black;
     background: transparent;
     font-size: 16px;
     outline: none;
     margin-top: 5px;
 }
 .emaili:focus{
-    border-bottom: 2px solid #145a2e;
+    border-bottom: 2px solid black;
 }
 .checkbox{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    gap: 8px;
 }
 .checkbox label {
-    margin-left: 8px;
+    margin: 0;
     font-size: 15px;
+    color: black;
 }
 .submit {
-    background: #044602;
+    background: #826246;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -491,202 +413,53 @@ button:hover {
     cursor: pointer;
 }
 .submit:hover {
-    background: #607660;
+    background: #b59375;
 }
-.footer{
-    display: flex;
-    justify-content: space-between;
-    padding: 50px 150px;
-    gap: 40px;
-    color: black;
-    background: #f2f2f2;
-    border-top: 2px solid #dcdcdc;
-}
-
 .logo-footer{
     font-size: 26px;
     margin-bottom: 15px;
-    color: #044602;
+    color: black;
     font-weight: 600;
 }
-
 .socials{
     margin-top: 25px;
     display: flex;
     gap: 15px;
 }
-
 .socials i{
     font-size: 24px;
     cursor: pointer;
     transition: 0.2s;
 }
-
 .socials i:hover{
     color: #044602;
 }
-
-copyright{
+.copyright{
     text-align: center;
     padding: 10px 0 25px;
     font-size: 14px;
     color: #333;
 }
-/*Pjesa e responsivitetit-Tableta */
-@media (max-width: 992px) {
-
-    header {
-        padding: 10px 20px;
-    }
-    .nav_links {
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    .hero {
-        height: auto;
-        flex-direction: column;
-    }
-    .foto {
-        width: 100%;
-        height: 300px;
-    }
-    .overlay {
-        width: 80%;
-        height: auto;
-        padding: 30px;
-    }
-    .overlay h2 {
-        font-size: 32px;
-        margin-bottom: 20px;
-    }
-    .katrorat {
-        flex-wrap: wrap;
-    }
-    .katror {
-        width: 45%;
-        height: auto;
-    }
-    .about-container {
-        flex-direction: column;
-    }
-    .about-text {
-        padding: 40px;
-    }
-    .contact-section {
-        flex-direction: column;
-    }
-    .contact-image img {
-        height: 300px;
-    }
-    .Services {
-        flex-direction: column;
-    }
-    .services-majtas, .services-djathtas {
-        width: 100%;
-        padding: 30px;
-    }
-    .services-djathtas {
-        padding-left: 30px;
-    }
-    .footer {
-        padding: 40px 50px;
-    }
+.adress a{
+    color: black;
+    text-decoration: none;
 }
-
-/* Telefonë */
-@media (max-width: 768px) {
-
-    .nav_links {
-        display: none; 
-    }
-    .foto {
-        height: 250px;
-    }
-    .overlay {
-        width: 90%;
-    }
-    .katrorat {
-        flex-direction: column;
-        align-items: center;
-    }
-    .katror {
-        width: 90%;
-    }
-
-    .about-text {
-        padding: 30px;
-    }
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    .pjesa {
-        font-size: 22px;
-    }
-    .service-item p {
-        font-size: 16px;
-    }
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-    .footer-majtas, .footer-djathtas {
-        width: 100%;
-    }
-    .socials {
-        justify-content: center;
-    }
+.adress a:hover,
+.contact:hover{
+    color: #826246;
 }
-/* Telefona të vegjël (≤ 480px) */
-@media (max-width: 480px) {
-
-    header img {
-        width: 120px;
-    }
-
-    .overlay h2 {
-        font-size: 26px;
-    }
-
-    .overlay p {
-        font-size: 15px;
-    }
-
-    .about-text {
-        padding: 20px;
-    }
-
-    button, .book-btn {
-        width: 100%;
-    }
-
-    .footer {
-        padding: 20px;
-    }
-}
-
 
 /*PJESA E LOGIN FORM*/
+
 body.login-forma{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url(images/photo-1747238415033-b74eec07eb59.avif) no-repeat;
+    background-image: url(images/photo-1747238415033-b74eec07eb59.avif) ;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     min-height: 100vh;
-}
-header{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    display: flex;
-    padding: 10px 40px;
-    background-color: #D7C4B6;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: inset;
 }
 .imazhi1{
     cursor: pointer;
@@ -708,17 +481,17 @@ li a{
 .nav_links li a {
     transition: all 0.3s ease 0s;
 }
-.nav_links li :hover{
+.nav_links li a:hover{
     color: #f9adc9;
 }
-
 .login-box{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(images/photo-1747238415033-b74eec07eb59.avif) no-repeat;
+    background: url(images/photo-1747238415033-b74eec07eb59.avif);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -751,7 +524,7 @@ li a{
     color: #fff;
     padding: 20px 45px 20px 20px;
 }
-.input-boxi input ::placeholder{
+.input-boxi input::placeholder{
     color: #fff;
 }
 .input-boxi i{
@@ -778,6 +551,9 @@ li a{
 }
 .remember-forgot a:hover{
     text-decoration: underline;
+}
+.remember-forgot label{
+    color: black;
 }
 .wrapper .btn{
     width: 100%;
@@ -807,8 +583,8 @@ li a{
     text-decoration: underline;
 }
 
-/*REGISTER FORM - SHTES */
 
+/*REGISTER FORM - SHTES */
 
 .input-boxi select, 
 .input-boxi input[type="date"] {
@@ -824,7 +600,6 @@ li a{
     appearance: none;
     cursor: pointer;
 }
-
 .input-boxi select option {
     color: #000; 
 }
@@ -862,7 +637,6 @@ li a{
     color: #fff;
     pointer-events: none;
 }
-/* Checkbox + labels */
 .terms-label {
     display: flex;
     gap: 10px;
@@ -871,20 +645,19 @@ li a{
     font-size: 14px;
     color: #fff;
 }
-
 .terms-label input {
     accent-color: #fff;
 }
-
-
 .input-boxi.big {
     height: auto;
     margin-bottom: 12px;
 }
+.Terms{
+    color: black;
+}
 
 
-/*Pjesa e book-sessions */
-
+/*PJESA E BOOK_SESSION*/
 
 .box{
     width: 350px;
@@ -896,7 +669,7 @@ li a{
 }
 label{
     font-weight: bold;
-    color: #044602;
+    color: #b59375;
     display: block;
     margin-bottom: 10px;
 }
@@ -911,7 +684,7 @@ input[type="date"]{
     margin-top: 20px;
     width: 100%;
     padding: 10px;
-    background: #044602;
+    background: #b59375;
     color: white;
     font-size: 16px;
     border: none;
@@ -919,7 +692,7 @@ input[type="date"]{
     cursor: pointer;
 }
 .cal-btn:hover{
-    background: #0f2c21;
+    background: #b59375;
 }
 .service-cal{
     margin-top: 20px;
@@ -930,514 +703,169 @@ input[type="date"]{
 }
 
 
-/*booking online eda*/
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-    background: #f5f5f5;
-}
-
-.nav-header {
-    background: white;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.imazhi1 {
-    height: 50px;
-}
-
-.nav_links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav_links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
-.nav_links a:hover {
-    color: #8b7355;
-}
-
-.book-header {
-    background: #8b7355;
-    color: white;
-    padding: 60px 40px;
-}
-
-.book-header h1 {
-    font-size: 4rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.book-header p {
-    font-size: 1.2rem;
-}
-
-main {
-    background: #f5f0e8;
-    border-radius: 40px 40px 0 0;
-    margin-top: -50px;
-    padding: 40px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.filter {
-    text-align: right;
-    margin-bottom: 30px;
-}
-
-.filter label {
-    margin-right: 10px;
-}
-
-.filter select {
-    padding: 8px 30px 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.month {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.month button {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.month h2 {
-    font-size: 1.5rem;
-}
-
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 15px;
-}
-
-.day-header {
-    text-align: center;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.day {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.class {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.class button {
-    background: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: auto;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.class button:hover {
-    background: #555;
-}
-
-@media (max-width: 768px) {
-    .nav-header {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-
-    .nav_links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .book-header h1 {
-        font-size: 2rem;
-    }
-    
-    .calendar {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .calendar {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/*pjesa about*/
-
-.studio-section{
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 30px 8%;
-}
-.studio-text{
-    width: 50%;
-}
-.studio-text h2{
-    font-size: 48px;
-    color: #244020;
-}
-.studio-text p{
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-}
-.studio-image img{
-    width: 100%;
-    border-radius: 8px;
-}
-.instructors{
-    padding: 80px 8%;
-}
-.title{
-    font-size: 48px;
-    color: #244020;
-}
-.subtitle{
-    max-width: 600px;
-    margin-bottom: 50px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-.instructor-section{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 50px;
-}
-.instructor{
-    background: #fdfcf7;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: left;
-    transition: 0.3s;
-}
-.instructor:hover{
-    transform: translateY(-5px);
-}
-.instructor img{
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-.instructor h3{
-    margin-top: 15px;
-    font-size: 24px;
-    color: #244020;
-}
-.instructor p{
-    margin-top: 8px;
-}
-.role{
-    font-size: 16px;
-    color: #4a7343;
-    margin-top: 8px;
-}
-.email{
-    display: inline-block;
-    margin-top: 10px;
-    color: #244020;
-    text-decoration: none;
-    font-weight: bold;
-}
+/*PJESA E RESPONSIVITETIT(TABLET)*/
 @media (max-width: 992px) {
-    .studio-section{
-        flex-direction: column;
-        text-align: center;
+    header {
+        padding: 10px 20px;
     }
-    .studio-text{
-        width: 100%;
-    }
-    .studio-text h2{
-        font-size: 38px;
-    }
-    .title{
-        font-size: 38px;
-    }
-}
-@media (max-width: 768px) {
-    header{
-        flex-direction: column;
-        gap: 20px;
-    }
-    .nav_links{
-        display: flex;
-        flex-direction: column;
+    .nav_links {
         gap: 10px;
-        text-align: center;
+        flex-wrap: wrap;
     }
-    .studio-section{
-        padding: 20px 5%;
+    .hero {
+        height: auto;
+        flex-direction: column;
     }
-    .studio-text h2{
-        font-size: 32px;
-    }
-    .studio-text p{
-        font-size: 16px;
-    }
-    .instructors{
-        padding: 50px 5%;
-    }
-    .title{
-        font-size: 32px;
-    }
-    .subtitle{
-        font-size: 16px;
-    }
-    .instructor img{
+    .foto {
+        width: 100%;
         height: 300px;
     }
+    .overlay {
+        width: 80%;
+        height: auto;
+        padding: 30px;
+    }
+    .overlay h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .katrorat {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    .katror {
+        width: 45%;
+        height: auto;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+    .about-text {
+        padding: 40px;
+    }
+    .why-us {
+        grid-template-columns: 1fr;
+    }
+    .us-left,
+    .us-right {
+        padding: 50px;
+    }
+    .contact-section {
+        flex-direction: column;
+    }
+    .contact-image img {
+        height: 300px;
+    }
+    .footer {
+        padding: 40px 60px;
+    }
 }
-@media (max-width: 480px) {
-    .studio-text h2,
-    .title{
-        font-size: 28px;
+
+
+/*PJESA E RESPONSIVITETIT(TELEFON<768px)*/
+@media (max-width: 768px) {
+    header{
+        flex-wrap: wrap;
+        padding: 10px 20px;
     }
-    .instructor-section{
-        gap: 30px;
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
     }
-    .instructor{
-        padding: 18px;
+    .burger{
+        display: flex;
     }
-    .instructor img{
+    .nav_links.active{
+        display: flex;
+    }
+    .foto {
         height: 250px;
     }
-}
-
-
-
-
-
-
-/*  contact formi eda*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: #f7f5ec;
-    min-height: 100vh;
-}
-
-.container {
-    display: flex;
-    min-height: 100vh;
-}
-
-
-.left {
-    width: 55%;
-    background: #D4BCB6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-}
-
-.left-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    max-width: 600px;
-}
-
-.studio-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    object-fit: cover;
-}
-
-.quote {
-    color: white;
-    font-size: 1.4rem;
-    font-style: italic;
-    text-align: center;
-    line-height: 1.6;
-    font-weight: 300;
-    max-width: 500px;
-    padding: 0 20px;
-}
-
-
-.right {
-    width: 45%;
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.right h2 {
-    margin-bottom: 30px;
-    color: #1f3d23;
-    font-weight: 500;
-    width: 100%;
-}
-
-
-form {
-    max-width: 520px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.row {
-    display: flex;
-    gap: 20px;
-    width: 100%;
-    margin-bottom: 0;
-}
-
-.row .field {
-    flex: 1;
-    margin-bottom: 25px;
-}
-
-
-.field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
-    width: 100%;
-}
-
-
-label {
-    font-size: 14px;
-    margin-bottom: 6px;
-    color: #1f3d23;
-    font-weight: 600;
-}
-
-
-input,
-textarea {
-    width: 100%;
-    border: 1px solid #7b8f7a;
-    padding: 12px;
-    background: white;
-    outline: none;
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-}
-
-input:focus,
-textarea:focus {
-    border-color: #1f3d23;
-}
-
-
-input {
-    height: 44px;
-}
-
-textarea {
-    height: 140px;
-    resize: none;
-}
-
-
-button {
-    width: 100%;
-    height: 48px;
-    background: #1f3d23;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 0;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-
-@media (max-width: 768px) {
-    .container {
+    .overlay {
+        width: 90%;
+    }
+    .overlay h2 {
+        font-size: 26px;
+    }
+    .overlay p {
+        font-size: 15px;
+    }
+    .katrorat {
         flex-direction: column;
+        align-items: center;
     }
-    
-    .left {
-        width: 100%;
-        min-height: 300px;
-        padding: 30px 20px;
+    .katror {
+        width: 90%;
     }
-    
-    .studio-image {
-        max-width: 100%;
+    .about-text {
+        padding: 30px;
     }
-    
-    .quote {
-        font-size: 1.1rem;
+    .us-left h1 {
+        font-size: 40px;
     }
-    
-    .right {
-        width: 100%;
-        padding: 40px 30px;
+    .us-left p,
+    .us-box p {
+        font-size: 16px;
     }
-    
-    .row {
+    .contact-form h2,
+    .contact-form label,
+    .contact-form textarea,
+    .contact-form button {
+        margin-left: 20px;
+    }
+    .footer {
         flex-direction: column;
-        gap: 0;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .footer-majtas,
+    .footer-djathtas {
+        width: 100%;
+    }
+    .socials {
+        justify-content: center;
+    }
+}
+
+
+/*PJESA E RESPONSIVITETIT(TELEFON<480px)*/
+@media (max-width: 480px) {
+
+    header img {
+        width: 120px;
+    }
+    .nav_links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .burger{
+        display: flex;
+    }
+    .nav_links.active{
+        display: flex;
+    }
+    .overlay h2 {
+        font-size: 22px;
+    }
+    .overlay p {
+        font-size: 14px;
+    }
+    .overlay button,
+    .book-btn {
+        width: 100%;
+    }
+    .about-text {
+        padding: 20px;
+    }
+    .us-left {
+        padding: 30px;
+    }
+    .us-right {
+        padding: 30px;
+    }
+    .footer {
+        padding: 20px;
     }
 }
