@@ -7,43 +7,101 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <body class="login-forma">
-    <header>
-       <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates" onclick="window.location.href='Pilates.html'">
-       <nav>
-        <ul class="nav_links">
-            <li><a href="Pilates.html">Home</a></li>
-             <li><a href="about.html">About</a></li>
-             <li><a href="services.html">Services</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            <li><a href="booking.html">Book Online</a></li>
-        </ul>
-       </nav>
-   </header>
-   </body>
-    <div class="login-box">
-       <div class="wrapper">
-        <form action="">
-            <h1>Login</h1>
-            <div class="input-boxi">
-                <input type="text" placeholder="Username" required>
-                <i class='bxr  bx-user'></i> 
-            </div>
-            <div class="input-boxi">
-                <input type="password" placeholder="Password" required>
-                <i class='bxr  bx-lock'></i> 
-            </div>
-            <div class="remember-forgot">
-                <label> <input type="checkbox">Remeber Me</label>
-                 <a href="#">Forgot Password</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="register-link">
-                <p>Dont have an account?  <a href="register.html">Register</a></p>
-            </div>
-        </form>
 
-    </div> 
+<body class="login-forma">
+
+<header>
+   <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates" onclick="window.location.href='Pilates.html'">
+   <nav>
+    <ul class="nav_links">
+        <li><a href="Pilates.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booking.html">Book Online</a></li>
+    </ul>
+   </nav>
+</header>
+
+<div class="login-box">
+  <div class="wrapper">
+    <form id="loginForm">
+      <h1>Login</h1>
+
+      <div class="input-boxi">
+        <input type="text" id="username" placeholder="Username" required>
+        <i class='bxr bx-user'></i> 
+        <small class="error-message" id="usernameError"></small>
+      </div>
+
+      <div class="input-boxi">
+        <input type="password" id="password" placeholder="Password" required>
+        <i class='bxr bx-lock'></i> 
+        <small class="error-message" id="passwordError"></small>
+      </div>
+
+      <div class="remember-forgot">
+        <label><input type="checkbox"> Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+
+      <button type="submit" class="btn" id="loginBtn" disabled>Login</button>
+
+      <div class="register-link">
+        <p>Dont have an account? <a href="register.html">Register</a></p>
+      </div>
+    </form>
+  </div>
 </div>
+<script>
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const loginBtn = document.getElementById("loginBtn");
+const form = document.getElementById("loginForm");
+
+const usernameError = document.getElementById("usernameError");
+const passwordError = document.getElementById("passwordError");
+
+function checkInputs() {
+  loginBtn.disabled = !(username.value.trim() && password.value.trim());
+  usernameError.textContent = "";
+  passwordError.textContent = "";
+}
+
+username.addEventListener("input", checkInputs);
+password.addEventListener("input", checkInputs);
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let userVal = username.value.trim();
+  let passVal = password.value.trim();
+
+  let valid = true;
+
+  if (userVal.length < 3) {
+    usernameError.textContent = "Username duhet të ketë të paktën 3 karaktere";
+    username.classList.add("input-error");
+    valid = false;
+  } else {
+    usernameError.textContent = "";
+    username.classList.remove("input-error");
+  }
+
+  if (passVal.length < 6) {
+    passwordError.textContent = "Password duhet të ketë të paktën 6 karaktere";
+    password.classList.add("input-error");
+    valid = false;
+  } else {
+    passwordError.textContent = "";
+    password.classList.remove("input-error");
+  }
+
+  if (valid) {
+    window.location.href = "booking.html";
+  }
+});
+</script>
+
+</body>
 </html>

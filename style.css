@@ -281,6 +281,7 @@ header nav .nav_links li a:hover{
     width: 100%;
     margin-top: 50px;
     min-height: 400px; 
+    align-items: stretch;
 }
 .contact-image,
 .contact-form {
@@ -298,13 +299,14 @@ header nav .nav_links li a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    padding: 0 40px;
+    padding: 40px;
 }
 .contact-form h2, 
 .contact-form label,
 .contact-form textarea,
 .contact-form button{
     margin-left: 0;
+    margin-bottom: 20px;
 }
 .contact-form h2 {
     margin-bottom: 30px;
@@ -524,6 +526,10 @@ li a{
     height: 50px;
     position: relative;
 }
+.input-boxi{
+    margin-bottom: 30px;
+    position: relative;
+}
 .input-boxi input{
     width: 100%;
     height: 100%;
@@ -594,7 +600,15 @@ li a{
 .register-link p a:hover{
     text-decoration: underline;
 }
-
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  min-height: 22px;
+  line-height: 22px;
+  font-weight: bold;
+}
 
 /*REGISTER FORM - SHTES */
 
