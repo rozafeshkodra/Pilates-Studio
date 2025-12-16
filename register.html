@@ -78,5 +78,80 @@
         </div>
     </div>
 
+
+  <script>
+const form = document.querySelector("form");
+const fullName = form.querySelector("input[placeholder='Full Name']");
+const email = form.querySelector("input[placeholder='Email']");
+const phone = form.querySelector("input[placeholder='Phone Number']");
+const password = form.querySelector("input[placeholder='Password']");
+const confirmPassword = form.querySelector("input[placeholder='Confirm Password']");
+const terms = form.querySelector("input[type='checkbox']");
+
+
+[fullName, email, phone, password, confirmPassword].forEach(input => {
+    const small = document.createElement("small");
+    small.classList.add("error-message");
+    input.parentElement.appendChild(small);
+});
+
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    let valid = true;
+
+    
+    if(fullName.value.trim().length < 3){
+        fullName.parentElement.querySelector("small").textContent = "Full Name must be at least 3 characters";
+        valid = false;
+    } else {
+        fullName.parentElement.querySelector("small").textContent = "";
+    }
+
+ 
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(!emailPattern.test(email.value.trim())){
+        email.parentElement.querySelector("small").textContent = "Invalid email address";
+        valid = false;
+    } else {
+        email.parentElement.querySelector("small").textContent = "";
+    }
+
+   
+    const phonePattern = /^[0-9]{8,15}$/;
+    if(!phonePattern.test(phone.value.trim())){
+        phone.parentElement.querySelector("small").textContent = "Invalid phone number";
+        valid = false;
+    } else {
+        phone.parentElement.querySelector("small").textContent = "";
+    }
+
+    
+    if(password.value.trim().length < 6){
+        password.parentElement.querySelector("small").textContent = "Password must be at least 6 characters";
+        valid = false;
+    } else {
+        password.parentElement.querySelector("small").textContent = "";
+    }
+
+    
+    if(password.value.trim() !== confirmPassword.value.trim()){
+        confirmPassword.parentElement.querySelector("small").textContent = "Passwords do not match";
+        valid = false;
+    } else {
+        confirmPassword.parentElement.querySelector("small").textContent = "";
+    }
+
+    
+    if(!terms.checked){
+        alert("You must accept the Terms & Conditions");
+        valid = false;
+    }
+
+    if(valid){
+        
+        window.location.href = "login.html";
+    }
+});
+</script>
 </body>
 </html>

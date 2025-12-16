@@ -53,6 +53,8 @@
     </form>
   </div>
 </div>
+
+
 <script>
 const username = document.getElementById("username");
 const password = document.getElementById("password");
@@ -61,6 +63,7 @@ const form = document.getElementById("loginForm");
 
 const usernameError = document.getElementById("usernameError");
 const passwordError = document.getElementById("passwordError");
+
 
 function checkInputs() {
   loginBtn.disabled = !(username.value.trim() && password.value.trim());
@@ -80,7 +83,7 @@ form.addEventListener("submit", function(e) {
   let valid = true;
 
   if (userVal.length < 3) {
-    usernameError.textContent = "Username duhet të ketë të paktën 3 karaktere";
+    usernameError.textContent = "Username must be at least 3 characters";
     username.classList.add("input-error");
     valid = false;
   } else {
@@ -89,7 +92,7 @@ form.addEventListener("submit", function(e) {
   }
 
   if (passVal.length < 6) {
-    passwordError.textContent = "Password duhet të ketë të paktën 6 karaktere";
+    passwordError.textContent = "Password must be at least 6 characters";
     password.classList.add("input-error");
     valid = false;
   } else {
