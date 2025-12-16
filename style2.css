@@ -229,7 +229,6 @@ li a{
 
 /*PJESA E SERVICES*/
 .Services{
-    margin-top: 50px;
     display: flex;
     width: 100%;
     min-height: 85vh;
@@ -411,7 +410,13 @@ textarea:focus {
     opacity: 0.9;
     background: #b59375;
 }
-
+.error-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+    min-height: 18px;
+}
 
 /*PJESA E BOOK ONLINE*/
 .nav-header {

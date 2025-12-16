@@ -34,31 +34,35 @@
         <div class="right-contact">
             <h2>Get in Touch With Us</h2>
 
-            <form class="form-contact">
+            <form class="form-contact" id="contactForm">
                 <div class="row">
                     <div class="field">
                         <label>First name *</label>
-                        <input type="text">
+                        <input type="text" id="firstName">
+                        <small class="error-message" id="firstNameError"></small>
                     </div>
                     <div class="field">
                         <label>Last name *</label>
-                        <input type="text">
+                        <input type="text" id="lastName">
+                        <small class="error-message" id="lastNameError"></small>
                     </div>
                 </div>
 
                 <div class="field">
                     <label>Email *</label>
-                    <input type="email">
+                    <input type="email" id="email">
+                    <small class="error-message" id="emailError"></small>
                 </div>
 
                 <div class="field">
-                    <label>Phone</label>
-                    <input type="tel">
+                    <label>Phone *</label>
+                    <input type="tel" id="phone">
                 </div>
 
                 <div class="field">
-                    <label>Message</label>
-                    <textarea></textarea>
+                    <label>Message *</label>
+                    <textarea id="message" ></textarea>
+                    <small class="error-message" id="messageError"></small>
                 </div>
 
                 <button type="submit" class="submit-contact">Submit</button>
@@ -96,5 +100,64 @@
 </section>
 
 <p class="copyright">© 2025 Studio Pilates – All rights reserved.</p>
+
+<script>
+const form = document.getElementById("contactForm");
+
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+
+const firstNameError = document.getElementById("firstNameError");
+const lastNameError = document.getElementById("lastNameError");
+const emailError = document.getElementById("emailError");
+const messageError = document.getElementById("messageError");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let valid = true;
+
+    if (firstName.value.trim() === "") {
+       firstNameError.textContent = "First name is required";
+       valid = false;
+    } else if (firstName.value.trim().length < 3) {
+       firstNameError.textContent = "First name must be at least 3 characters";
+       valid = false;
+    } else {
+       firstNameError.textContent = "";
+    }
+
+    if (lastName.value.trim() === "") {
+       lastNameError.textContent = "Last name is required";
+       valid = false;
+    } else if (lastName.value.trim().length < 3) {
+       lastNameError.textContent = "Last name must be at least 3 characters";
+       valid = false;
+    } else {
+       lastNameError.textContent = "";
+    }
+
+    if (email.value.trim() === "") {
+        emailError.textContent = "Email is required";
+        valid = false;
+    } else {
+        emailError.textContent = "";
+    }
+
+    if (message.value.trim() === "") {
+        messageError.textContent = "Message is required";
+        valid = false;
+    } else {
+        messageError.textContent = "";
+    }
+
+    if (valid) {
+        alert("Message sent successfully!");
+        form.reset();
+    }
+});
+</script>
 </body>
 </html>
