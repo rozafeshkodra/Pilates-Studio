@@ -45,14 +45,15 @@ li a{
     display: flex;
     justify-content: space-between;
     padding: 50px 150px;
-    gap: 40px;
     color: black;
+    border-top: 2px solid #dcdcdc;
 }
 .footer-majtas, .footer-djathtas{
     width: 45%;
 }
 .footer-majtas p{
     cursor: pointer;
+    line-height: 1.5;
 }
 .contact{
     margin: 5px;
@@ -74,6 +75,10 @@ li a{
 .footer-djathtas label{
     font-size: 16px;
 }
+.footer-djathtas label,
+.checkbox label {
+    color: black;
+}
 .emaili{
     width: 100%;
     padding: 10px 0;
@@ -81,21 +86,18 @@ li a{
     border-bottom: 2px solid #0e341a;
     background: transparent;
     font-size: 16px;
-    outline: none;
     margin-top: 5px;
-}
-.emaili:focus{
-    border-bottom: 2px solid #145a2e;
 }
 .checkbox{
     display: flex;
-    align-items: center;
     margin-bottom: 20px;
     margin-top: 20px;
+    gap: 8px;
 }
 .checkbox label {
-    margin-left: 8px;
+    margin: 0;
     font-size: 15px;
+    color: black;
 }
 .submit {
     background: #826246;
@@ -108,44 +110,19 @@ li a{
 .submit:hover {
     background: #b59375;
 }
-.footer{
-    display: flex;
-    justify-content: space-between;
-    padding: 50px 150px;
-    gap: 40px;
-    color: black;
-    background: #f2f2f2;
-    border-top: 2px solid #dcdcdc;
-}
-
-.logo-footer{
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: black;
-    font-weight: 600;
-}
-
-.socials{
-    margin-top: 25px;
-    display: flex;
-    gap: 15px;
-}
-
-.socials i{
-    font-size: 24px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.socials i:hover{
-    color: #044602;
-}
-
 .copyright{
     text-align: center;
     padding: 10px 0 25px;
     font-size: 14px;
     color: #333;
+}
+.adress a{
+    color: black;
+    text-decoration: none;
+}
+.adress a:hover,
+.contact:hover{
+    color: #826246;
 }
 
 /*PJESA E ABOUT*/
@@ -160,12 +137,13 @@ li a{
     width: 50%;
 }
 .studio-text h2{
+    margin-bottom: 20px;
     font-size: 48px;
     color: #244020;
 }
 .studio-text p{
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.8;
     color: #333;
 }
 .studio-image img{
@@ -176,6 +154,7 @@ li a{
     padding: 80px 8%;
 }
 .title{
+    padding-bottom: 20px;
     font-size: 48px;
     color: #244020;
 }
@@ -183,7 +162,7 @@ li a{
     max-width: 600px;
     margin-bottom: 50px;
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 .instructor-section{
     display: grid;
@@ -213,11 +192,11 @@ li a{
 }
 .instructor p{
     margin-top: 8px;
+    margin-bottom: 15px;
 }
 .role{
     font-size: 16px;
     color: #4a7343;
-    margin-top: 8px;
 }
 .email{
     display: inline-block;
