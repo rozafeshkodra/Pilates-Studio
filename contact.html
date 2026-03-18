@@ -8,7 +8,6 @@
 </head>
 <body>
      
-
  <header>
         <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates" onclick="window.location.href='Pilates.html'">
        <nav>
@@ -21,8 +20,6 @@
         </ul>
        </nav>
    </header>
-
-
 <div class="container-contact">
         <div class="left-contact">
             <div class="left-content">
@@ -30,80 +27,69 @@
                 <p class="quote">"Change happens through movement and movement heals."</p>
             </div>
         </div>
-
         <div class="right-contact">
             <h2>Get in Touch With Us</h2>
-
-            <form class="form-contact" id="contactForm">
+            <p class="contact-subtitle">We usually reply within 24 hours.</p>
+            <p class="success-message" id="successMessage"></p>
+            <form class="form-contact" id="contactForm" novalidate>
                 <div class="row">
-                    <div class="field">
-                        <label>First name *</label>
-                        <input type="text" id="firstName">
+                    <div class="field" id="firstNameField">
+                        <label for="firstName">First name *</label>
+                        <input type="text" id="firstName" autocomplete="given-name">
                         <small class="error-message" id="firstNameError"></small>
                     </div>
-                    <div class="field">
-                        <label>Last name *</label>
-                        <input type="text" id="lastName">
+                    <div class="field" id="lastNameField">
+                        <label for="lastName">Last name *</label>
+                        <input type="text" id="lastName" autocomplete="family-name">
                         <small class="error-message" id="lastNameError"></small>
                     </div>
                 </div>
-
-                <div class="field">
-                    <label>Email *</label>
-                    <input type="email" id="email">
+                <div class="field" id="emailField">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" autocomplete="email">
                     <small class="error-message" id="emailError"></small>
                 </div>
-
                 <div class="field">
-                    <label>Phone *</label>
-                    <input type="tel" id="phone">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" autocomplete="tel" placeholder="+383 ...">
                 </div>
-
-                <div class="field">
-                    <label>Message *</label>
-                    <textarea id="message" ></textarea>
+                <div class="field" id="messageField">
+                    <label for="message">Message *</label>
+                    <textarea id="message" rows="6"></textarea>
                     <small class="error-message" id="messageError"></small>
                 </div>
-
-                <button type="submit" class="submit-contact">Submit</button>
+                <button type="submit" class="submit-contact" id="submitBtn">Submit</button>
             </form>
         </div>
     </div>
 <section class="footer">
     <div class="footer-majtas">
         <h2 class="logo-footer">Studio Pilates</h2>
-
         <p class="contact">123-456-7890</p>
         <p class="contact">studiopilates@gmail.com</p>
         <p class="adress">Rr.Muharrem Fejza</p>
-
         <div class="socials">
             <i class="fa-brands fa-facebook"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-tiktok"></i>
         </div>
     </div>
-
     <div class="footer-djathtas">
         <h3>Connect With Us</h3>
-
         <label>Email</label>
         <input type="email" placeholder="Your email" class="emaili">
-
         <div class="checkbox">
             <input type="checkbox" id="subsribe">
             <label for="subsribe">Yes, subscribe me to your newsletter.</label>
         </div>
-
         <button class="submit">Submit</button>
     </div>
 </section>
-
 <p class="copyright">© 2025 Studio Pilates – All rights reserved.</p>
+
 
 <script>
 const form = document.getElementById("contactForm");
-
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
@@ -114,50 +100,52 @@ const lastNameError = document.getElementById("lastNameError");
 const emailError = document.getElementById("emailError");
 const messageError = document.getElementById("messageError");
 
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  
+  let valid = true;
 
-    let valid = true;
+  // emri
+  const fn = firstName.value.trim();
+  if (fn === "") {
+    firstNameError.textContent = "First name is required";
+    valid = false;
+  } else if (fn.length < 3) {
+    firstNameError.textContent = "First name must be at least 3 characters";
+    valid = false;
+  }
 
-    if (firstName.value.trim() === "") {
-       firstNameError.textContent = "First name is required";
-       valid = false;
-    } else if (firstName.value.trim().length < 3) {
-       firstNameError.textContent = "First name must be at least 3 characters";
-       valid = false;
-    } else {
-       firstNameError.textContent = "";
-    }
+  // mbiemri
+  const ln = lastName.value.trim();
+  if (ln === "") {
+    lastNameError.textContent = "Last name is required";
+    valid = false;
+  } else if (ln.length < 3) {
+    lastNameError.textContent = "Last name must be at least 3 characters";
+    valid = false;
+  }
 
-    if (lastName.value.trim() === "") {
-       lastNameError.textContent = "Last name is required";
-       valid = false;
-    } else if (lastName.value.trim().length < 3) {
-       lastNameError.textContent = "Last name must be at least 3 characters";
-       valid = false;
-    } else {
-       lastNameError.textContent = "";
-    }
+  // emaili
+  const em = email.value.trim();
+  if (em === "") {
+    emailError.textContent = "Email is required";
+    valid = false;
+  }
 
-    if (email.value.trim() === "") {
-        emailError.textContent = "Email is required";
-        valid = false;
-    } else {
-        emailError.textContent = "";
-    }
+  // pjesa e mesazhit
+  const msg = message.value.trim();
+  if (msg === "") {
+    messageError.textContent = "Message is required";
+    valid = false;
+  }
 
-    if (message.value.trim() === "") {
-        messageError.textContent = "Message is required";
-        valid = false;
-    } else {
-        messageError.textContent = "";
-    }
-
-    if (valid) {
-        alert("Message sent successfully!");
-        form.reset();
-    }
+  
+  if (valid) {
+    alert("Message sent successfully!");
+    form.reset();
+  }
 });
+
 </script>
 </body>
 </html>
