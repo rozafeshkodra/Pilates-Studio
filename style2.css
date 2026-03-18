@@ -6,18 +6,26 @@
 body{
     background-color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
 /*PJESA E HEADERIT*/
 header{
+    flex-wrap: wrap;
     display: flex;
-    padding: 10px 40px;
+    padding: 10px 50px;
     background-color: #FEF5E7;
     justify-content: space-between;
     align-items: center;
-    box-shadow: inset;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 70px;
+  /*  backdrop-filter: blur(8px);*/
 }
 .imazhi1{
     cursor: pointer;
+    height: 50px;
+    width: auto;
 }
 .nav_links{
     display: flex;
@@ -29,8 +37,6 @@ header{
 li a{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
-    font-size: 16px;
     color: black;
 }
 .nav_links li a {
@@ -38,6 +44,18 @@ li a{
 }
 .nav_links li a:hover{
     color: #a28164c9;
+}
+header nav .nav_links li a:hover{
+    color: #a28164c9;
+}
+.nav_links a:active{
+  transform: translateY(1px);
+}
+.nav_links a.active{
+  background: #1f1f1f;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 /*PJESA E FOOTERIT*/
@@ -208,69 +226,51 @@ li a{
 
 /*PJESA E SERVICES*/
 .Services{
-    display: flex;
-    width: 100%;
-    min-height: 85vh;
+    padding: 60px 40px 120px;
+    text-align: center;
 }
-.services-majtas{
-    display: flex;
-    background-color: #D9CECC;
-    width: 50%;
-    color: black;
-    padding: 50px 30px;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 5%;
+.Services h2{
+  font-size: 32px;
+  margin-bottom: 40px;
 }
-.services-majtas h1 {
-    font-size: 48px;
+.services-container{
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
 }
-.services-majtas p{
-    font-size: 20px;
-    max-width: 400px;
+.services-img{
+  width: 100%;
+  border-radius: 30px;
+  display: block;
 }
-.services-djathtas{
-    width: 54%;
-    padding: 20px 60px 0 250px;
-    
+.cards{
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
 }
-.pjesa{
-    max-width: 500px;
-    font-size: 30px;
-    
+.card{
+  background: white;
+  padding: 30px 60px;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
 }
-.services-list{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.card h3{
+  margin-bottom: 10px;
+  font-size: 20px;
 }
-.service-item{
-    display: inline-block
+.card p{
+  font-size: 15px;
+  color: #3f3f3f;
 }
-.service-item h3{
-    margin-right: 10px;
-    padding-top: 20px;
-    font-size: 25px;
-    cursor: pointer;
+.card:hover{
+  transform: translateY(-5px);
+  transition: 0.3s;
 }
-.service-item p{
-   display: inline;
-   margin: 0;
-   font-size: 20px;
-}
-.service-item .desc{
-    display: block;
-    margin-top: 5px;
-    
-    line-height: 1.4;
-}
-.service-item h3 {
-    transition: color 0.3s ease; 
-}
-.service-item:hover h3 {
-    color: #dc9bc2; 
-}
-
 
 /*PJESA E CONTACTIT*/
 :root{

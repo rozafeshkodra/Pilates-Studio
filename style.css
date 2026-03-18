@@ -16,6 +16,11 @@ header{
     background-color: #FEF5E7;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    min-height: 70px;
+   /* backdrop-filter: blur(8px);*/
 }
 /*.burger{
     display: none;
@@ -31,6 +36,8 @@ header{
 }*/
 .imazhi1{
     cursor: pointer;
+    height: 50px;
+    width: auto;
 }
 .nav_links{
     display: flex;
@@ -52,6 +59,15 @@ li a{
 }
 header nav .nav_links li a:hover{
     color: #a28164c9;
+}
+.nav_links a:active{
+    transform: translateY(1px);
+}
+.nav_links a.active{
+    background-color: #1f1f1f;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 
