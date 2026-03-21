@@ -8,6 +8,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
+img{
+  max-width: 100%;
+  height: auto;
+}
 /*PJESA E HEADERIT*/
 header{
     flex-wrap: wrap;
@@ -20,7 +24,7 @@ header{
     top: 0;
     z-index: 10;
     min-height: 70px;
-  /*  backdrop-filter: blur(8px);*/
+    gap: 20px;
 }
 .imazhi1{
     cursor: pointer;
@@ -52,7 +56,7 @@ header nav .nav_links li a:hover{
   transform: translateY(1px);
 }
 .nav_links a.active{
-  background: #1f1f1f;
+  background-color: #1f1f1f;
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
@@ -62,9 +66,11 @@ header nav .nav_links li a:hover{
 .footer{
     display: flex;
     justify-content: space-between;
-    padding: 50px 150px;
+    padding: 40px 5%;
     color: black;
     border-top: 2px solid #dcdcdc;
+    flex-direction: row;
+    text-align: left;
 }
 .footer-majtas, .footer-djathtas{
     width: 45%;
@@ -101,7 +107,7 @@ header nav .nav_links li a:hover{
     width: 100%;
     padding: 10px 0;
     border: none;
-    border-bottom: 2px solid #0e341a;
+    border-bottom: 2px solid black;
     background: transparent;
     font-size: 16px;
     margin-top: 5px;
@@ -116,6 +122,7 @@ header nav .nav_links li a:hover{
     margin: 0;
     font-size: 15px;
     color: black;
+    font-weight: bold;
 }
 .submit {
     background: #826246;
@@ -449,7 +456,7 @@ header nav .nav_links li a:hover{
 
 
 /*PJESA E BOOK ONLINE*/
-.nav-header {
+/*.nav-header {
     background: white;
     padding: 20px 40px;
     display: flex;
@@ -469,7 +476,7 @@ header nav .nav_links li a:hover{
 
 .nav_links a:hover {
     color: #8b7355;
-}
+}QETO HEKI SE JON PJES E HEADERIT EDHE NESE I FSHIN NUK BOHET SEN*/
 
 .book-header {
     background: #8c7a65;
@@ -580,56 +587,38 @@ main {
 
 
 
-/* Tablet (≤ 1024px) */
-@media (max-width: 1024px) {
-  /* Header */
+/*PJESA E RESPONSIVITETIT(TABLET)-ROZAFA*/
+@media (max-width: 992px) {
   header {
     padding: 10px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-
   .nav_links {
     gap: 10px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 40px 40px;
-    gap: 20px;
-  }
-
-  /* About */
-  .studio-section {
-    padding: 30px 5%;
-    gap: 25px;
-  }
-
-  .studio-text h2,
-  .title {
-    font-size: 36px;
-  }
-
-  .studio-text p,
-  .subtitle {
-    font-size: 16px;
-  }
-
-  /* Services */
-  .Services {
-    flex-direction: column;
-  }
-
-  .services-majtas,
-  .services-djathtas {
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
-    padding: 30px 40px;
   }
-
-  .services-djathtas {
-    padding-left: 40px;
+  .studio-section{
+    flex-direction: column;
+    text-align: center;
   }
+  .studio-image,
+  .studio-text{
+    width: 100%;
+  }
+  .card{
+    width: 45%;
+  }
+}
 
-  /* Contact */
-  .container-contact {
+
+
+
+
+
+  /*.container-contact {
     flex-direction: column;
   }
 
@@ -648,107 +637,70 @@ main {
   }
 
   /* Book Online */
-  .book-header {
+ /* .book-header {
     padding: 40px 30px;
   }
 
   .book-header h1 {
     font-size: 3rem;
-  }
+  }*qet pjes e kom bo koment se mpengojke tani e kshyr ti /
 
-  main {
-    padding: 30px 20px;
-  }
-}
 
-/* Phone (≤ 600px) */
-@media (max-width: 600px) {
-  /* Header */
+/*PJESA E RESPONSIVITETIT(TELEFON<768px)-ROZAFA*/
+@media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 15px;
+    padding: 10px;
   }
-
   .nav_links {
-    width: 100%;
-    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
   }
-
-  .nav_links li {
-    margin-right: 10px;
-  }
-
-  /* Footer */
   .footer {
     flex-direction: column;
-    padding: 30px 20px;
+    text-align: center;
+    padding: 40px 20px;
   }
-
   .footer-majtas,
   .footer-djathtas {
     width: 100%;
+    margin-bottom: 20px;
   }
-
-  /* About */
-  .studio-section {
+  .footer-djathtas{
+    align-items: center;
+  }
+  .studio-section{
     flex-direction: column;
-    padding: 20px 15px;
+    text-align: center;
   }
-
   .studio-text,
-  .studio-image {
+  .studio-image{
     width: 100%;
   }
-
-  .studio-text h2,
-  .title {
-    font-size: 30px;
-  }
-
-  .studio-text p,
-  .subtitle {
-    font-size: 15px;
-  }
-
-  /* Instructors */
-  .instructors {
-    padding: 40px 15px;
-  }
-
-  .instructor img {
-    height: 260px;
-  }
-
-  /* Services */
-  .Services {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .services-majtas,
-  .services-djathtas {
-    width: 100%;
-    padding: 25px 15px;
-  }
-
-  .services-majtas h1 {
+  .studio-text h2{
     font-size: 32px;
   }
-
-  .services-majtas p,
-  .service-item p,
-  .pjesa {
-    font-size: 16px;
+  .instructor img{
+    height: 250px;
   }
-
-  .pjesa {
-    max-width: 100%;
+  .cards{
+    position: static;
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
   }
+  .card{
+    width: 90%;
+  }
+}
 
-  /* Contact */
+
+
+
+
+  /* Contact 
   .container-contact {
     flex-direction: column;
   }
@@ -767,7 +719,7 @@ main {
     flex-direction: column;
   }
 
-  /* Book Online */
+  /* Book Online 
   .book-header {
     padding: 30px 15px;
   }
@@ -776,9 +728,7 @@ main {
     font-size: 2.4rem;
   }
 
-  main {
-    padding: 20px 10px;
-  }
+  
 
   .calendar {
     grid-template-columns: repeat(2, 1fr);
@@ -787,5 +737,31 @@ main {
 
   .class {
     min-height: auto;
+  }EDHE QET PJES NJEJT E KOM BO KOMENT SE OSHT PJES E JOTJA*/
+
+
+/*PJESA E RESPONSIVITETIT(TELEFON<480px)-ROZAFA*/
+@media(max-width: 480px){
+  
+  header img{
+    width: 120px;
+  }
+  .nav_links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .nav_links li a{
+    font-size:  14px;
+  }
+  .footer{
+    padding: 40px 5%;
+  }
+  .studio-text h2{
+    font-size: 28px;
+  }
+  .submit{
+    width: 100%;
   }
 }

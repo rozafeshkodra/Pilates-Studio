@@ -8,6 +8,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
+img{
+    max-width: 100%;
+    height: auto;
+}
 /*PJESA E HEADERIT*/
 header{
     flex-wrap: wrap;
@@ -20,20 +24,9 @@ header{
     top: 0;
     z-index: 10;
     min-height: 70px;
+    gap: 20px;
    /* backdrop-filter: blur(8px);*/
 }
-/*.burger{
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-.burger span{
-    height: 3px;
-    width: 25px;
-    background-color: black;
-    border-radius: 2px;
-}*/
 .imazhi1{
     cursor: pointer;
     height: 50px;
@@ -378,7 +371,7 @@ header nav .nav_links li a:hover{
 .footer{
     display: flex;
     justify-content: space-between;
-    padding: 50px 150px;
+    padding: 40px 5%;
     color: black;
     border-top: 2px solid #dcdcdc;
 }
@@ -411,7 +404,7 @@ header nav .nav_links li a:hover{
 }
 .footer-djathtas label,
 .checkbox label {
-    color: black; 
+    color: black;
 }
 .emaili{
     width: 100%;
@@ -427,10 +420,13 @@ header nav .nav_links li a:hover{
     margin-bottom: 20px;
     margin-top: 20px;
     gap: 8px;
+    justify-content: center;
+    align-items: center;
 }
 .checkbox label {
     margin: 0;
     font-size: 15px;
+    color: black;
     color: black;
 }
 .submit {
@@ -473,7 +469,8 @@ header nav .nav_links li a:hover{
     background-position: center;
 }
 .wrapper{
-    width: 420px;
+    width: 90%;
+    max-width: 420px;
     background: transparent;
     border: 2px solid rgba(255,255,255, .2);
     color: #fff;
@@ -688,7 +685,7 @@ input[type="date"]{
 }
 
 
-/*PJESA E RESPONSIVITETIT(TABLET)*/
+/*PJESA E RESPONSIVITETIT(TABLET)-ROZAFA*/
 @media (max-width: 992px) {
     header {
         padding: 10px 20px;
@@ -697,6 +694,96 @@ input[type="date"]{
         gap: 10px;
         flex-wrap: wrap;
     }
+     .about-container {
+        flex-direction: column;
+    }
+    .about-text {
+        padding: 40px;
+    }
+    .why-us {
+        grid-template-columns: 1fr;
+    }
+    .us-left,
+    .us-right {
+        padding: 50px;
+    }
+    .footer {
+        padding: 40px 60px;
+    }
+}
+
+
+/*PJESA E RESPONSIVITETIT(TELEFON<768px)-ROZAFA*/
+@media (max-width: 768px) {
+    header{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .nav_links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav_links.active{
+        display: flex;
+    }
+    .about-text {
+        padding: 30px;
+    }
+    .us-left h1 {
+        font-size: 40px;
+    }
+    .us-left p,
+    .us-box p {
+        font-size: 16px;
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .footer-majtas,
+    .footer-djathtas {
+        width: 100%;
+    }
+}
+
+
+/*PJESA E RESPONSIVITETIT(TELEFON<480px)-ROZAFA*/
+@media (max-width: 480px) {
+
+    header img {
+        width: 120px;
+    }
+    .nav_links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav_links.active{
+        display: flex;
+    }
+    .about-text {
+        padding: 20px;
+    }
+    .us-left {
+        padding: 30px;
+    }
+    .us-right {
+        padding: 30px;
+    }
+    .footer {
+        padding: 20px;
+    }
+}
+
+
+
+/*PJESA E RESPONSIVITETIT(TABLET)*/
+@media (max-width: 992px) {
     .hero {
         height: auto;
         flex-direction: column;
@@ -722,53 +809,24 @@ input[type="date"]{
         width: 45%;
         height: auto;
     }
-    .about-container {
-        flex-direction: column;
-    }
-    .about-text {
-        padding: 40px;
-    }
-    .why-us {
-        grid-template-columns: 1fr;
-    }
-    .us-left,
-    .us-right {
-        padding: 50px;
-    }
     .contact-section {
         flex-direction: column;
     }
     .contact-image img {
         height: 300px;
     }
-    .footer {
-        padding: 40px 60px;
-    }
 }
 
 
 /*PJESA E RESPONSIVITETIT(TELEFON<768px)*/
 @media (max-width: 768px) {
-    header{
-        flex-wrap: wrap;
-        padding: 10px 20px;
-    }
-    .nav_links {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .burger{
-        display: flex;
-    }
-    .nav_links.active{
-        display: flex;
-    }
     .foto {
         height: 250px;
     }
     .overlay {
-        width: 90%;
+        position: static;
+        transform: none;
+        margin: 20px auto;
     }
     .overlay h2 {
         font-size: 26px;
@@ -783,54 +841,17 @@ input[type="date"]{
     .katror {
         width: 90%;
     }
-    .about-text {
-        padding: 30px;
-    }
-    .us-left h1 {
-        font-size: 40px;
-    }
-    .us-left p,
-    .us-box p {
-        font-size: 16px;
-    }
     .contact-form h2,
     .contact-form label,
     .contact-form textarea,
     .contact-form button {
         margin-left: 20px;
     }
-    .footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 20px;
-    }
-    .footer-majtas,
-    .footer-djathtas {
-        width: 100%;
-    }
-    .socials {
-        justify-content: center;
-    }
 }
 
 
 /*PJESA E RESPONSIVITETIT(TELEFON<480px)*/
 @media (max-width: 480px) {
-
-    header img {
-        width: 120px;
-    }
-    .nav_links {
-        display: none;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .burger{
-        display: flex;
-    }
-    .nav_links.active{
-        display: flex;
-    }
     .overlay h2 {
         font-size: 22px;
     }
@@ -840,17 +861,5 @@ input[type="date"]{
     .overlay button,
     .book-btn {
         width: 100%;
-    }
-    .about-text {
-        padding: 20px;
-    }
-    .us-left {
-        padding: 30px;
-    }
-    .us-right {
-        padding: 30px;
-    }
-    .footer {
-        padding: 20px;
     }
 }
