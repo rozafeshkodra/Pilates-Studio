@@ -454,6 +454,21 @@ header nav .nav_links li a:hover{
 .contact:hover{
     color: #826246;
 }
+.status-message{
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    display: none;
+    transition: all 0.3s ease;
+}
+.status-message.success{
+    color: green;
+    display: block;
+}
+.status-message.error{
+    color: red;
+    display: block;
+}
 
 /*PJESA E LOGIN FORM*/
 
@@ -558,12 +573,26 @@ header nav .nav_links li a:hover{
 }
 .error-message {
   color: red;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 5px;
   display: block;
-  min-height: 22px;
-  line-height: 22px;
-  font-weight: bold;
+  min-height: 15px;
+}
+.input-boxi{
+    margin-bottom: 40px;
+}
+.input-boxi input.input-error{
+    border-bottom: 2px solid red !important;
+}
+.success-message{
+    background-color: #d4edda;
+    color: green;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    border: 1px solid #c3e6cb;
+    font-weight: bold;
 }
 
 /*REGISTER FORM - SHTES */
@@ -762,6 +791,9 @@ input[type="date"]{
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+    }
+    .nav_links a{
+        font-size: 14px;
     }
     .nav_links.active{
         display: flex;

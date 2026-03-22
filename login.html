@@ -45,7 +45,8 @@
         <a href="#">Forgot Password</a>
       </div>
 
-      <button type="submit" class="btn" id="loginBtn" disabled>Login</button>
+      <div id="loginSuccess" class="success-message" style="display:none;"></div>
+      <button type="submit" class="btn" id="loginBtn">Login</button>
 
       <div class="register-link">
         <p>Dont have an account? <a href="register.html">Register</a></p>
@@ -55,56 +56,7 @@
 </div>
 
 
-<script>
-const username = document.getElementById("username");
-const password = document.getElementById("password");
-const loginBtn = document.getElementById("loginBtn");
-const form = document.getElementById("loginForm");
-
-const usernameError = document.getElementById("usernameError");
-const passwordError = document.getElementById("passwordError");
-
-
-function checkInputs() {
-  loginBtn.disabled = !(username.value.trim() && password.value.trim());
-  usernameError.textContent = "";
-  passwordError.textContent = "";
-}
-
-username.addEventListener("input", checkInputs);
-password.addEventListener("input", checkInputs);
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  let userVal = username.value.trim();
-  let passVal = password.value.trim();
-
-  let valid = true;
-
-  if (userVal.length < 3) {
-    usernameError.textContent = "Username must be at least 3 characters";
-    username.classList.add("input-error");
-    valid = false;
-  } else {
-    usernameError.textContent = "";
-    username.classList.remove("input-error");
-  }
-
-  if (passVal.length < 6) {
-    passwordError.textContent = "Password must be at least 6 characters";
-    password.classList.add("input-error");
-    valid = false;
-  } else {
-    passwordError.textContent = "";
-    password.classList.remove("input-error");
-  }
-
-  if (valid) {
-    window.location.href = "booking.html";
-  }
-});
-</script>
+<script src="script1.js"></script>
 
 </body>
 </html>
