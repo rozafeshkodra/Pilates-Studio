@@ -87,65 +87,6 @@
 <p class="copyright">© 2025 Studio Pilates – All rights reserved.</p>
 
 
-<script>
-const form = document.getElementById("contactForm");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const email = document.getElementById("email");
-const message = document.getElementById("message");
-
-const firstNameError = document.getElementById("firstNameError");
-const lastNameError = document.getElementById("lastNameError");
-const emailError = document.getElementById("emailError");
-const messageError = document.getElementById("messageError");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  
-  let valid = true;
-
-  // emri
-  const fn = firstName.value.trim();
-  if (fn === "") {
-    firstNameError.textContent = "First name is required";
-    valid = false;
-  } else if (fn.length < 3) {
-    firstNameError.textContent = "First name must be at least 3 characters";
-    valid = false;
-  }
-
-  // mbiemri
-  const ln = lastName.value.trim();
-  if (ln === "") {
-    lastNameError.textContent = "Last name is required";
-    valid = false;
-  } else if (ln.length < 3) {
-    lastNameError.textContent = "Last name must be at least 3 characters";
-    valid = false;
-  }
-
-  // emaili
-  const em = email.value.trim();
-  if (em === "") {
-    emailError.textContent = "Email is required";
-    valid = false;
-  }
-
-  // pjesa e mesazhit
-  const msg = message.value.trim();
-  if (msg === "") {
-    messageError.textContent = "Message is required";
-    valid = false;
-  }
-
-  
-  if (valid) {
-    alert("Message sent successfully!");
-    form.reset();
-  }
-});
-
-</script>
 
  <script src="script1.js"></script>
 </body>
