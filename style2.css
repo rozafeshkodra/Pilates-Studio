@@ -654,7 +654,7 @@ body {
     background: var(--accent-hover);
 }
 
-
+/* pjesa e responsivitetit EDA*/
 @media (max-width: 900px) {
     .book-header h1 {
         font-size: 1.85rem;
