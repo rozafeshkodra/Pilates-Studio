@@ -69,6 +69,9 @@ if(loginForm){
 
         if(valid){
             const successMsg=document.getElementById('loginSuccess');
+            const userField=document.getElementById('username');
+
+            localStorage.setItem('user_name',userField.value.trim());
 
             successMsg.textContent="Login Successful! Redirecting...";
             successMsg.style.display="block";
@@ -80,8 +83,64 @@ if(loginForm){
     });
 }
 
+//Dinamizimi i services-ROZAFA
 
+const sherbimet=[
+    {
+        titulli: "Classes",
+        pershkrimi: "Take part in out Mat Pilates sessions to build core strength and boost mobility.",
+        imazhi: "images/premium_photo-1661720873706-b5a2cfcae765.avif"
+    },
+    {
+        titulli: "Reformer Pilates",
+        pershkrimi: "Discover the advantages of Reformes Pilates in a group setting, where each workout helps sculpt your muscles and improve balance",
+        imazhi: ""
+    },
+    {
+        titulli: "Private Sessions",
+        pershkrimi: "Enjoy a fully tailored Pilates experience with our one-on-one sessions.",
+        imazhi: ""
+    }
+];
+function shfaqSherbimet(){
+    const container= document.querySelector('.cards');
+    if(container){
+        container.innerHTML="";
+        sherbimet.forEach(s=>{
+            container.innerHTML +=`
+            <div class="card">
+                <h3>${s.titulli}</h3>
+                <p>${s.pershkrimi}</p>
+            </div>`;
+        });
+    }
+}
+document.addEventListener('DOMContentLoaded',shfaqSherbimet);
 
+//Ndryshimi i headerit kur behet login nje user-ROZAFA
+function updateHeader(){
+    const emri=localStorage.getItem('user_name');
+    const navUl=document.querySelector('.nav_links');
+
+    if(emri && navUl){
+        const welcome=document.createElement('li');
+        welcome.innerHTML=`<span style="color: #d4a373; font-weight: bold; padding: 0 10px;">Hi, ${emri}!</span>`;
+
+        const logout=document.createElement('li');
+        logout.innerHTML= `<a href="#" id="logoutBtn" style="color: red;">Logout</a>`;
+
+        navUl.appendChild(welcome);
+        navUl.appendChild(logout);
+
+        document.getElementById('logoutBtn').addEventListener('click',function(e){
+            e.preventDefault();
+            localStorage.removeItem('user_name');
+            window.location.href="Pilates.html";
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateHeader);
 
 // Validimi i Get In Toush With Us EDA  - 
 const myContactForm = document.querySelector('.contact-section form');
