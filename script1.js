@@ -36,21 +36,20 @@ const loginForm=document.getElementById('loginForm');
 
 if(loginForm){
     loginForm.addEventListener('submit', function(e){
-        e.preventDefault();
 
         const user=document.getElementById('username');
         const pass=document.getElementById('password');
         const uError=document.getElementById('usernameError');
         const pError=document.getElementById('passwordError');
 
-        const userRegex=/^[a-zA-Z0-9]{3,15}$/;
+        const userRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         const passRegex=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 
         let valid=true;
 
         if(!userRegex.test(user.value.trim())){
-            uError.textContent="Username should be 3-15 characters, no symbols.";
+            uError.textContent="Please enter a valid email address.";
             user.style.borderBottom="2px solid red";
             valid=false;
         }else{
@@ -117,30 +116,7 @@ function shfaqSherbimet(){
 }
 document.addEventListener('DOMContentLoaded',shfaqSherbimet);
 
-//Ndryshimi i headerit kur behet login nje user-ROZAFA
-function updateHeader(){
-    const emri=localStorage.getItem('user_name');
-    const navUl=document.querySelector('.nav_links');
 
-    if(emri && navUl){
-        const welcome=document.createElement('li');
-        welcome.innerHTML=`<span style="color: #d4a373; font-weight: bold; padding: 0 10px;">Hi, ${emri}!</span>`;
-
-        const logout=document.createElement('li');
-        logout.innerHTML= `<a href="#" id="logoutBtn" style="color: red;">Logout</a>`;
-
-        navUl.appendChild(welcome);
-        navUl.appendChild(logout);
-
-        document.getElementById('logoutBtn').addEventListener('click',function(e){
-            e.preventDefault();
-            localStorage.removeItem('user_name');
-            window.location.href="Pilates.html";
-        });
-    }
-}
-
-document.addEventListener('DOMContentLoaded', updateHeader);
 
 // Validimi i Get In Toush With Us EDA  - 
 const myContactForm = document.querySelector('.contact-section form');

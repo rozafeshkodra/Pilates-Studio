@@ -24,7 +24,7 @@ class user{
     }
 
     public function login($email, $password):bool{
-        $query = "SELECT id, name, surname, email, password FROM {$this->table_name} WHERE email = :email";
+        $query = "SELECT id, name, surname, email, password,role FROM {$this->table_name} WHERE email = :email";
 
         $stmt = $this->connection->prepare($query);
 
@@ -34,10 +34,14 @@ class user{
         if($stmt->rowCount() > 0){
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if(password_verify(password: $password, hash: $row['password'])){
-            session_start();
-            $_SESSION['user_id'] = $row['id'];
-            $_SESSION['email'] = $row['email'];
-            return true;
+                if(session_status() === PHP_SESSION_NONE){
+                    session_start();
+                }
+                $_SESSION['user_id'] = $row['id'];
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['name']=$row['name'];
+                $_SESSION['role']=$row['role'];
+                return true;
             }
         }
         return false;

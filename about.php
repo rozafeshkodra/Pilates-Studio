@@ -7,19 +7,8 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <header>
-        <img class="imazhi1" src="spi-logo.svg" alt="logo-Pilates" onclick="window.location.href='Pilates.html'">
-       <nav>
-        <ul class="nav_links">
-            <li><a href="Pilates.html">Home</a></li>
-             <li><a href="about.html" class="active">About</a></li>
-             <li><a href="services.html">Services</a></li>
-             <li><a href="contact.html">Contact</a></li>
-            <li><a href="booking.html">Book Online</a></li>
-           
-        </ul>
-       </nav>
-   </header>
+    <?php include 'header.php'; ?>
+
    <section class="studio-section">
     <div class="studio-text">
         <h2>Discover Our Space</h2>
@@ -74,35 +63,7 @@
     </div>
    </section>
 
-   <section class="footer">
-    <div class="footer-majtas">
-        <h2 class="logo-footer">Studio Pilates</h2>
-
-        <p class="contact">123-456-7890</p>
-        <p class="contact">studiopilates@gmail.com</p>
-        <p class="adress">
-            <a href="https://maps.app.goo.gl/v17v9tocxQwDsUoK6">Rr.Muharrem Fejza
-            </a>
-        </p>
-    </div>
-
-    <div class="footer-djathtas">
-        <h3>Connect With Us</h3>
-
-        <label>Email</label>
-        <input type="email" placeholder="Your email" class="emaili">
-
-        <div class="checkbox">
-            <input type="checkbox" id="subsribe">
-            <label for="subsribe">Yes, subscribe me to your newsletter.</label>
-        </div>
-
-        <button class="submit">Submit</button>
-        <div id="footer-message" class="status-message"></div>
-    </div>
-</section>
-
-<p class="copyright">© 2025 Studio Pilates – All rights reserved.</p>
+   <?php include 'footer.php'; ?>
 
  <script src="script1.js"></script>
 </body>
