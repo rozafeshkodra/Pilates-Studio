@@ -1,11 +1,11 @@
 //Pjesa e validimit te footerit-ROZAFA
 
-const footerButton=document.querySelector('.footer-djathtas .submit');
+const footerForm=document.querySelector('.footer-djathtas form');
 const footerEmail=document.querySelector('.emaili');
 const footerMessage=document.getElementById('footer-message');
 
-if(footerButton){
-    footerButton.addEventListener('click',function(){
+if(footerForm){
+    footerForm.addEventListener('submit',function(event){
         const emailVlera=footerEmail.value.trim();
         const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -13,26 +13,30 @@ if(footerButton){
             footerMessage.textContent=text;
             footerMessage.className="status-message "+ type;
             footerMessage.style.display="block";
+
+            footerMessage.style.color=(type === "error") ? "red":"green";
         }
 
-        if(emailVlera===""){
-            showMessage("Please fill in the email field before submitting.","error");
+        if(!emailRegex.test(emailVlera)){
+            event.preventDefault();
+            showMessage("Please write a valid email address (e.g., name@example.com).","error");
+            footerEmail.focus();
+            return;
+        }
+        if(emailVlera === ""){
+            event.preventDefault();
+            showMessage("Please fill in the email field before submitting." , "error");
             footerEmail.focus();
             return;
         }
 
-        if(emailRegex.test(emailVlera)){
-            showMessage("Thank you for registering for our Newsletter!","success");
-            footerEmail.value="";
-        }else{
-            showMessage("Please write a valid email address (e.g., name@example.com).","error");
-        }
+        showMessage("Processing...","success");
     });
 }
 
 //Validimi i login formes-ROZAFA
 
-const loginForm=document.getElementById('loginForm');
+/*const loginForm=document.getElementById('loginForm');
 
 if(loginForm){
     loginForm.addEventListener('submit', function(e){
@@ -49,35 +53,62 @@ if(loginForm){
         let valid=true;
 
         if(!userRegex.test(user.value.trim())){
-            uError.textContent="Please enter a valid email address.";
+            showMessage("")
             user.style.borderBottom="2px solid red";
             valid=false;
         }else{
-            uError.textContent="";
             user.style.borderBottom="1px solid #ccc"
         }
 
         if(!passRegex.test(pass.value.trim())){
-            pError.textContent="Password should be min 6 characters, at least 1 letter and 1 number.";
+            pError.textContent = "Password should be min 6 characters, at least 1 letter and 1 number.";
             pass.style.borderBottom="2px solid red";
             valid=false;
         }else{
-            pError.textContent="";
             pass.style.borderBottom="1px solid #ccc";
         }
 
-        if(valid){
-            const successMsg=document.getElementById('loginSuccess');
+        if(!valid){
+            e.preventDefault();
+        }
+        else{
             const userField=document.getElementById('username');
+            localStorage.setItem('user_name',user.value.trim());
 
-            localStorage.setItem('user_name',userField.value.trim());
-
+            const successMsg=document.getElementById('loginSuccess');
             successMsg.textContent="Login Successful! Redirecting...";
             successMsg.style.display="block";
+        }
+    });
+}
+*/
 
-            setTimeout(()=>{
-                window.location.href="booking.html";
-            },1000);
+const loginForm = document.getElementById('loginForm');
+const errorDisplay = document.getElementById('loginSuccess');
+
+if (loginForm) {
+    loginForm.addEventListener('submit', function(event) {
+        const emailField = document.getElementById('username');
+        const passwordField = document.getElementById('password');
+        
+        const emailValue = emailField.value.trim();
+        const passwordValue = passwordField.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        errorDisplay.style.color = "red"; 
+
+        if (emailValue === "" || passwordValue === "") {
+            event.preventDefault();
+            errorDisplay.textContent = "Please fill in all fields!";
+            errorDisplay.style.display = "block";
+            return;
+        }
+
+        if (!emailRegex.test(emailValue)) {
+            event.preventDefault();
+            errorDisplay.textContent = "Invalid email format!";
+            errorDisplay.style.display = "block";
+            return;
         }
     });
 }
@@ -161,7 +192,6 @@ if (myContactForm) {
         }, 1200);
     });
 }
-
 
 
 

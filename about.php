@@ -1,3 +1,18 @@
+<?php
+
+require_once 'Database.php';
+require_once 'Content.php';
+
+$db=new Database();
+$connection=$db->getConnection();
+$contentManager=new Content($connection);
+
+$aboutIntro=$contentManager->getSection('about_page_intro');
+
+$instructors=$contentManager->getAllInstructors();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,36 +47,18 @@
     </p>
 
     <div class="instructor-section">
+        <?php foreach($instructors as $inst): ?>
         <div class="instructor">
-            <img src="images/Lucy-Bowen-Hills.jpg" alt="instruktori i par">
-            <h3>Diona</h3>
-            <p class="role">Wellness Expert</p>
-            <p>Diona's holistic approach centers on the mind-body connection, 
-                guiding you toward balance. </p>
-            <a class="email" href="#">studiopilates@gmail.com</a>
+            <img src="images/<?php echo $inst['image']; ?>" alt="instruktori">
+            <h3><?php echo $inst['name'];?></h3>
+            <p class="role"><?php echo $inst['role']; ?></p>
+            <p><?php echo $inst['bio']; ?></p>
+            <a class="email" href="#"><?php echo $inst['email']; ?></a>
         </div>
-
-        <div class="instructor">
-            <img src="images/Melony-Beadle.jpg" alt="instruktori i dyt">
-            <h3>Drita</h3>
-            <p class="role">Pilates Instructor</p>
-            <p>With years of experience, Drita brings both expertise and uplifting energy 
-                to every session.
-            </p>
-            <a class="email" href="#">studiopilates@gmail.com</a>
-        </div>
-
-        <div class="instructor">
-            <img src="images/Photoshoot3_1200px.avif" alt="instruktori i 3">
-            <h3>Adeola</h3>
-            <p class="role">Pilates Coach</p>
-            <p>Adeola's bright energy for mindful movement helps clients feel 
-              confident in every class.
-            </p>
-            <a class="email" href="#">studiopilates@gmail.com</a>
-        </div>
+        <?php endforeach; ?>
     </div>
    </section>
+
 
    <?php include 'footer.php'; ?>
 

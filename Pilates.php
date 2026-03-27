@@ -1,25 +1,17 @@
 <?php
 
 require_once 'Database.php';
+require_once 'Content.php';
+
 $db=new Database();
 $connection=$db->getConnection();
 
-function getSection($key, $connection){
-    $query="SELECT * FROM about_sections WHERE section_key = :key LIMIT 1";
-    $stmt=$connection->prepare($query);
-    $stmt->bindParam(':key',$key);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
-}
+$contentManager=new Content($connection);
 
-$aboutMain=getSection('about_main', $connection);
-$aboutMission=getSection('about_mission',$connection);
-$whyUsMain=getSection('why_us_main',$connection);
-
-$queryWhy= "SELECT * FROM about_sections WHERE section_key LIKE 'why_us_%' AND section_key != 'why_us_main'";
-$stmtWhy= $connection->prepare($queryWhy);
-$stmtWhy->execute();
-$whyUsPoints= $stmtWhy->fetchAll(PDO::FETCH_ASSOC);
+$aboutMain=$contentManager->getSection('about_main');
+$aboutMission=$contentManager->getSection('about_mission');
+$whyUsMain=$contentManager->getSection('why_us_main');
+$whyUsPoints=$contentManager->getWhyUSPoints();
 
 ?>
 

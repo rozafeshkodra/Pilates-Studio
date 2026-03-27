@@ -39,23 +39,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <div class="login-box">
   <div class="wrapper">
-    <form id="loginForm" method="POST" action="login.php">
+    <form id="loginForm" method="POST" action="login.php" >
       <h1>Login</h1>
-
-      <?php if($_SERVER['REQUEST_METHOD']== 'POST' && !empty($error_message)): ?>
-        <p style="color: red; text-align:center; font-size: 14px;"><?php echo $error_message;?></p>
-      <?php endif; ?>
+      
+      <div id="loginSuccess" class="success-message" style="<?php echo (!empty($error_message)) ? 'display:block; color:red; margin-bottom:10px; text-align:center; ':'display: none;'; ?>">
+        <?php if(!empty($error_message)) echo $error_message; ?>
+      </div>
 
       <div class="input-boxi">
         <input type="email" name="email" id="username" placeholder="Email" required>
         <i class='bxr bx-user'></i> 
-        <small class="error-message" id="usernameError"></small>
       </div>
 
       <div class="input-boxi">
         <input type="password" name="password" id="password" placeholder="Password" required>
         <i class='bxr bx-lock'></i> 
-        <small class="error-message" id="passwordError"></small>
       </div>
 
       <div class="remember-forgot">
@@ -63,7 +61,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <a href="#">Forgot Password</a>
       </div>
 
-      <div id="loginSuccess" class="success-message" style="display:none;"></div>
       <button type="submit" class="btn" id="loginBtn">Login</button>
 
       <div class="register-link">

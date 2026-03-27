@@ -12,19 +12,18 @@
 
     <div class="footer-djathtas">
         <h3>Connect With Us</h3>
-
-        <form action="subscribe.php" method="POST">
+        <form id="newsletter-form" action="subscribe.php" method="POST">
             <label for="email_input">Email</label>
             <input type="email" name="email" id="email_input" placeholder="Your email" class="emaili" required>
 
             <div class="checkbox">
-                <input type="checkbox" id="subsribe">
-                <label for="subsribe">Yes, subscribe me to your newsletter.</label>
+                <input type="checkbox" id="subsribe_check">
+                <label for="subsribe_check">Yes, subscribe me to your newsletter.</label>
             </div>
 
             <button type="submit" class="submit">Submit</button>
         </form>
-        <div id="footer-message" class="status-message"></div>
+        <div id="footer-message" class="status-message" style="color: red; margin-top: 10px; font-size: 14px;"></div>
     </div>
 </section>
 
